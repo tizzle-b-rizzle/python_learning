@@ -12,6 +12,7 @@ def collatz(number):
             elif int(number) % 2 == 1:
                 number = int((number * 3) + 1)
                 print(number)
+        print("1")
         print("We'll end it here so the cycle doesn't continue forever!")
     except ValueError:
         print("please enter a correct value")
