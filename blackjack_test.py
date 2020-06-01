@@ -51,11 +51,14 @@ def endgame_comparison():
 
 
 def hit_or_stand_question():
+    if player_stand and dealer_stand:  # fix
+        endgame()
     hit_or_stand = input(
         "Would you like to hit, or stand?\nPress 'h' to hit, 's' to stand\n")
     if hit_or_stand == "h":
         player_hit()
     elif hit_or_stand == "s":
+        player_stand = True
         dealer_hit()
     elif hit_or_stand == "s" and dealer_cards[0] == 17:
         endgame_comparison()
@@ -101,8 +104,10 @@ def player_hit():
     print("The total value of your cards is " + str(player_cards[0]))
     if player_cards[0] > 21:
         print("You go bust; the house wins.\nBetter luck next time!")
+        endgame()
     elif player_cards[0] == 21:
         print("You got Blackjack! You Win!")
+        endgame()
     else:
         dealer_hit()
 
@@ -132,19 +137,21 @@ def dealer_hit():
               str(dealer_cards[0]))
         if dealer_cards[0] > 21:
             print("The house goes bust, you win!")
+            endgame()
         if dealer_cards[0] == 21:
             print("The house got Blackjack.\nBetter luck next time!")
+            endgame()
+        elif dealer_cards[0] == 17 or dealer_cards[0] > 17:
+            print("The dealer stands")
+            dealer_stand = True
+            hit_or_stand_question()
         else:
             hit_or_stand_question()
-    if dealer_cards[0] == 17 or dealer_cards[0] > 17:
-        print("The dealer stands")
-    hit_or_stand_question()
 
 
 ''
 
 ace_question()  # first thing user sees, asks them if they want aces to be high or low
-
 
 player_hit()
 
