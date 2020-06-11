@@ -1,12 +1,10 @@
 def printTable(tableData):
+    all_values = []
     colWidths = [0] * len(tableData)
-    # creates a list of how many items in each sublist
-    colWidths
-    for i in range(1, len(tableData) + 1):
-        for j in range(1, len(colWidths) - 1):
-            colWidths[j] = max(tableData[i-1])
-            finalWidth = max(colWidths[j])
-            print(finalWidth)
+    # creates a list of 0s for how many items (sublists) there are
+    #colWidths = [0, 0, 0]
+    for i in range(1, len(tableData) - 1):
+        
 
 
 printTable([['z', 'ab', 'abc', 'abbb'],
