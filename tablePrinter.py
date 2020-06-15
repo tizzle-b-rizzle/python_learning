@@ -1,15 +1,10 @@
 def printTable(tableData):
-    all_values = []
-    # creates a list of 0s for how many items (sublists) there are
-    #colWidths = [0, 0, 0]
-    for i in range(0, len(tableData)):
-        for str in tableData[i]:
-             str = len(str) #turns each str into the length of itself (e.g. apple would = 5)
-             all_values.append(str) #adds the above values to the all_values list
-             final_list = " ".join(tableData[i])
-    final_width = max(all_values)
-    #print(final_width)
-    print(final_list.rjust(final_width, "-"))   #CLOSE
+    colWidths = [0] * len(tableData)
+    for i in range(len(tableData)):
+    	    for j in range(len(tableData[i])):
+                if len(tableData[i][j]) > colWidths[i]:
+                    colWidths[i] = len(tableData[i][j])
+                    print(colWidths)
 
 printTable([['z', 'ab', 'abc', 'abbb'],
             ['Alice', 'Bob', 'Carol', 'Davidlalal'],
