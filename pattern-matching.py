@@ -46,3 +46,7 @@
 # you can use a ? after () to show that there should be a match if the group in the () is tere or not
 # eg re.compile(r'Bat(wo)?man') would find a match with "Batman" and "Batwoman"
 # essentially the ? means "match 1 or 0 of this" which can be useful if phones have area codes or not
+
+# you can use a * after () to say "match 0 or more"
+# so re.compile(r'(bat)*man') would find 'batman' and 'man' and 'batbatbatbatbatbatbatbatman'
+# you can use a + after the () to mean "match 1 or more"
