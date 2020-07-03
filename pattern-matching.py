@@ -43,10 +43,23 @@
 # The search will look for any of those words: Batman, Batmobile, Batcopter, Batbat
 # group(1) returns 'mobile' because that's the second item in the regex brackets
 
-# you can use a ? after () to show that there should be a match if the group in the () is tere or not
+# you can use a ? after () to show that there should be a match if the group in the () is there or not
 # eg re.compile(r'Bat(wo)?man') would find a match with "Batman" and "Batwoman"
 # essentially the ? means "match 1 or 0 of this" which can be useful if phones have area codes or not
 
 # you can use a * after () to say "match 0 or more"
 # so re.compile(r'(bat)*man') would find 'batman' and 'man' and 'batbatbatbatbatbatbatbatman'
 # you can use a + after the () to mean "match 1 or more"
+
+# if you want to match a certain amount, you can use ("thing you're looking for"){amount you wnat to find}
+# eg regex = re.compile(r'(ha){3}') would match "hahaha"
+# you can use a , to give a range
+# eg {3,5} means match between 3 and 5, {,5} means match 0 to 5, {5,} means match 5 or more
+# {3,5} is much quicker than writing {hahaha|hahahaha|hahahahaha}
+
+# regexs are greedy by default, this means they'll match the longets string possible
+# eg regex = re.compile(r'(ha){3,5}')
+#mo = regex.search("hahahahaha")
+# mo.group() would return "hahahahaha" because that's the longest match
+# to make something nongreedy (i.e. return the smallest possible string) we put a ? after the {}
+# the above code but with re.compile(r'(ha){3,5}?)') would return "hahaha"
