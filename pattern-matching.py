@@ -39,7 +39,7 @@
 # mo.group()
 # 'Batmobile'
 # mo.group(1)
-# 'mobile'
+# 'mobile's
 # The search will look for any of those words: Batman, Batmobile, Batcopter, Batbat
 # group(1) returns 'mobile' because that's the second item in the regex brackets
 
@@ -63,3 +63,13 @@
 # mo.group() would return "hahahahaha" because that's the longest match
 # to make something nongreedy (i.e. return the smallest possible string) we put a ? after the {}
 # the above code but with re.compile(r'(ha){3,5}?)') would return "hahaha"
+
+#.search() will return the first matched-item if there are multiple, to match multiple you use .findall()
+#if the regex has no groups, findall will return a list, if there are groups then findall will return a list of tuples, each tuple containing all of the matched groups
+# eg if the regex is  re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') then .findall('Cell: 415-555-9999 Work: 212-555-0000') would return ['415-555-9999', '212-555-0000']
+# if the regex is  (r'(\d\d\d)-(\d\d\d)-(\d\d\d\d)') then .findall('Cell: 415-555-9999 Work: 212-555-0000') would return [('415', '555', '1122'), ('212', '555', '0000')]
+
+#earlier we know that \d meant "match a digit 0 to 9", here are some others
+#\D means match a charcter that ISN'T a digit 0 to 9
+#\w means match any underscore charcter, letter, or numeric digit, \W matches NOT all of them
+#\s matches any space, tab, or newline character, \S matches any of NOT them
