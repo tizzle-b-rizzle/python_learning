@@ -73,3 +73,11 @@
 #\D means match a charcter that ISN'T a digit 0 to 9
 #\w means match any underscore charcter, letter, or numeric digit, \W matches NOT all of them
 #\s matches any space, tab, or newline character, \S matches any of NOT them
+
+#you can make your own character class using []
+#eg re.compile(r'[aeiouAEIOU]') will match all vowels, upper and lower case
+#you can use a - to get a range 
+#eg re.comple(r'[0-9a-zA-Z]') will match all digits and uper and lower case letters
+#everything in the [] will be matched, including punctuation such as \
+#you can use a ^ right before the [] to match everything except what's inside the []
+#eg re.compile(^[0-9]) will match everything aside from 0-9
