@@ -81,3 +81,10 @@
 #everything in the [] will be matched, including punctuation such as \
 #you can use a ^ right before the [] to match everything except what's inside the []
 #eg re.compile(^[0-9]) will match everything aside from 0-9
+
+#you can use ^ at the beginning of a "" to say "match something that begins with this"
+#eg re.compile (r'^hello') will match any string that begins with "hello" (it would match "hello world!" but not "he said hello")
+#you can use a $ at the end of a "" to say "match something that ends with this"
+#eg re.compile (r'\d$') will match something that ends in a digit 0-9
+#you can use a "." to match any character
+#eg re.compile(r'.at') would match cat, rat, flat however "flat" would return "lat" because the . only represents on character
