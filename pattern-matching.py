@@ -39,7 +39,7 @@
 # mo.group()
 # 'Batmobile'
 # mo.group(1)
-# 'mobile's
+# 'mobile'
 # The search will look for any of those words: Batman, Batmobile, Batcopter, Batbat
 # group(1) returns 'mobile' because that's the second item in the regex brackets
 
@@ -64,27 +64,11 @@
 # to make something nongreedy (i.e. return the smallest possible string) we put a ? after the {}
 # the above code but with re.compile(r'(ha){3,5}?)') would return "hahaha"
 
-#.search() will return the first matched-item if there are multiple, to match multiple you use .findall()
-#if the regex has no groups, findall will return a list, if there are groups then findall will return a list of tuples, each tuple containing all of the matched groups
-# eg if the regex is  re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') then .findall('Cell: 415-555-9999 Work: 212-555-0000') would return ['415-555-9999', '212-555-0000']
-# if the regex is  (r'(\d\d\d)-(\d\d\d)-(\d\d\d\d)') then .findall('Cell: 415-555-9999 Work: 212-555-0000') would return [('415', '555', '1122'), ('212', '555', '0000')]
+# you can match anything with .*, the . means any non-newine character, and the * means zero or more of the preceeding caracter
+# so re.complie(r'First Name: (.*)') will match anything after "First Name:"
+# .* is greedy by default, you cna use a ? at the end
+# so re.compile(r'<.*?>') on <yes>yes> will match <yes> but without the ? it would match <yes>yes>
+# you can use re.DOTALL to as the second argument in re.compile in order to match all characters including newline
 
-#earlier we know that \d meant "match a digit 0 to 9", here are some others
-#\D means match a charcter that ISN'T a digit 0 to 9
-#\w means match any underscore charcter, letter, or numeric digit, \W matches NOT all of them
-#\s matches any space, tab, or newline character, \S matches any of NOT them
-
-#you can make your own character class using []
-#eg re.compile(r'[aeiouAEIOU]') will match all vowels, upper and lower case
-#you can use a - to get a range 
-#eg re.comple(r'[0-9a-zA-Z]') will match all digits and uper and lower case letters
-#everything in the [] will be matched, including punctuation such as \
-#you can use a ^ right before the [] to match everything except what's inside the []
-#eg re.compile(^[0-9]) will match everything aside from 0-9
-
-#you can use ^ at the beginning of a "" to say "match something that begins with this"
-#eg re.compile (r'^hello') will match any string that begins with "hello" (it would match "hello world!" but not "he said hello")
-#you can use a $ at the end of a "" to say "match something that ends with this"
-#eg re.compile (r'\d$') will match something that ends in a digit 0-9
-#you can use a "." to match any character
-#eg re.compile(r'.at') would match cat, rat, flat however "flat" would return "lat" because the . only represents on character
+# if you want to match a string regardless of whether it has capital letters, you can put re.I or re.IGNORECASE as the recond argument of re.compile
+# eg re.compile(r"hello", re.I) would match "hello", "HELLO", and "hElLo"
