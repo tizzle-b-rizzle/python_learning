@@ -72,3 +72,10 @@
 
 # if you want to match a string regardless of whether it has capital letters, you can put re.I or re.IGNORECASE as the recond argument of re.compile
 # eg re.compile(r"hello", re.I) would match "hello", "HELLO", and "hElLo"
+
+#you can use .sub() to sub in new words to replace the strings you're matching
+#so if you had regex=re.compile(r'Hello') , regex.sub(r'goodbye', string) would sub any "Hello" with "goodbye" in that string
+#you can use .sub(\1), .sub(\2) etc to say "insert the text form group 1/2" and so on
+#eg let's say you want to only sow the first letter of something and censor the rest:
+#you'd do regex=re.compile(r'(\w)w+') (this is just a word but the first letter is in its own group)
+#then you can do regex.sub(r'\1****', Tyler) this would return T**** because the T is in its own group
