@@ -79,3 +79,5 @@
 #eg let's say you want to only sow the first letter of something and censor the rest:
 #you'd do regex=re.compile(r'(\w)w+') (this is just a word but the first letter is in its own group)
 #then you can do regex.sub(r'\1****', Tyler) this would return T**** because the T is in its own group
+
+#just did this to get the github ting
