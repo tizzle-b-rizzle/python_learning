@@ -64,6 +64,8 @@
 # to make something nongreedy (i.e. return the smallest possible string) we put a ? after the {}
 # the above code but with re.compile(r'(ha){3,5}?)') would return "hahaha"
 
+#you can match any character using re.compile(r'[]')
+
 # you can match anything with .*, the . means any non-newine character, and the * means zero or more of the preceeding caracter
 # so re.complie(r'First Name: (.*)') will match anything after "First Name:"
 # .* is greedy by default, you cna use a ? at the end
@@ -80,4 +82,9 @@
 #you'd do regex=re.compile(r'(\w)w+') (this is just a word but the first letter is in its own group)
 #then you can do regex.sub(r'\1****', Tyler) this would return T**** because the T is in its own group
 
-#just did this to get the github ting
+#sometimes you might want to break a regex into smaller parts
+#to do this put "re.verbose" as the second argument and it will ignore whitespace and comments
+
+#complie only takes 2 arguments, so if you wanna combine re.ignorcasee, re.dotall etc you can use the |
+#eg 
+# someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL | re.VERBOSE)
