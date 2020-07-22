@@ -1,8 +1,8 @@
 import re
 
-def fakeStripFunction(string, char):
-    if char == "":
-        regex1 = re.compile(r'()+([a-zA-Z0-9])*()*')
-        regex1.sub(
-    else:
-        regex2 = re.comi 
+def fakeStripFunction(string=""):
+    regex = re.compile(r'( *)(.*)( *)')
+    mo = regex.search(string)
+    output1 = regex.sub(mo.group(2), string)
+    print(output1)
+fakeStripFunction("     cat       ")
