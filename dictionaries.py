@@ -1,4 +1,4 @@
-#dictionaries are similar to lists, like how lists have indexes for their data, dictionaries have keytypes.
+#dictionaries are similar to lists, like how lists have indexes for their data, dictionaries have keyvalues.
 dictionary_1 = {"name": "Tyler", "height": "small", "eye_colour": "blues"} 
 #in this example, the keys are name, height, and eye_colour, and the values are tyler, small, and blue
 #this means the key-value pairs are name and tyler, height and small, and eye_colour and blue
