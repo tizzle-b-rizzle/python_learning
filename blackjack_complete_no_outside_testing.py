@@ -1,6 +1,7 @@
 # usualy 6 decks (no jokers)
 # face cards are all 10, ace can be 1 or 11 (give option to decide at beginning?)
 # dealer will hit if their cards are >17, 17 and above, they'll stand
+# this has no betting, splitting, double-down etc, I might add that in the future
 
 import random
 import sys
