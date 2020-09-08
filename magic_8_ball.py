@@ -21,5 +21,5 @@ def magic_8_ball_answer(functionName): #the function for the 8 ball. "functionNa
        return "Sure, why not"
 
 n = random.randint(1, 9) #randomly generates a number between 1 and 9
-answer = magic_8_ball_answer(n) #the variable "asnwer" is equal to the function of magic_8_ball_answer with the randomly generated answer above
+answer = magic_8_ball_answer(n) #the variable "answer" is equal to the function of magic_8_ball_answer with the randomly generated answer above
 print(answer) #prints the above variable
