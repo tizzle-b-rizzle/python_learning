@@ -1,4 +1,4 @@
-import random
+import random #remember to do this
 magic_8_ball_options = [
     "You will guess coin tosses .38% more accurately",
     "Your wife is cheating on you. Even if you don't have a wife, she still is.",
